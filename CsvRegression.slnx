@@ -1,3 +1,7 @@
 <Solution>
-  <Project Path="CsvRegression.csproj" />
+  <Project Path="src/CsvRegression.App/CsvRegression.csproj" />
+  <Project Path="src/CsvRegression.Domain/CsvRegression.Domain.csproj" />
+  <Project Path="src/CsvRegression.Data/CsvRegression.Data.csproj" />
+  <Project Path="tests/CsvRegression.Domain.UnitTests/CsvRegression.Domain.UnitTests.csproj" />
+  <Project Path="tests/CsvRegression.Data.IntegrationTests/CsvRegression.Data.IntegrationTests.csproj" />
 </Solution>
