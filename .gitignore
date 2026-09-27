@@ -2,6 +2,7 @@ bin/
 obj/
 .vs/
 *.user
+.claude/
 
 # planning/meta files — not part of the shipped project
 PLAN.md
