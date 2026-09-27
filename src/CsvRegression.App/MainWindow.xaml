@@ -15,15 +15,19 @@
 
         <Menu Grid.Row="0">
             <MenuItem Header="_File">
+                <MenuItem Header="_Open CSV..." Command="{Binding OpenCsvCommand}"/>
                 <MenuItem Header="_Exit" Click="ExitMenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="_Edit"/>
             <MenuItem Header="_Help"/>
         </Menu>
 
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Rows}" AutoGenerateColumns="True"
+                  IsReadOnly="True" CanUserAddRows="False"/>
+
         <StatusBar Grid.Row="2">
             <StatusBarItem>
-                <TextBlock x:Name="StatusText" Text="Ready"/>
+                <TextBlock Text="{Binding StatusText}"/>
             </StatusBarItem>
         </StatusBar>
     </Grid>

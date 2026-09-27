@@ -19,6 +19,7 @@ namespace CsvRegression
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
 
         private void ExitMenuItem_Click(object sender, RoutedEventArgs e)
