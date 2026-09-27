@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="7" SaveImages="0">
+	<Storages Current="0">
+		<Child Name="Default Configuration" />
+	</Storages>
+	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
+		<Children>
+			<Child Name="Sys" Key="{0955D7AA-7E28-45E4-A7DC-3AD1EA8E1AD9}">
+				<Properties>
+					<Property Name="Name">
+						<Value Value="Sys" />
+					</Property>
+				</Properties>
+				<Children>
+					<Child Name="CsvRegression" Key="{DB5B395E-D50A-4B77-BEFF-D677690255C7}">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value Value="CsvRegression" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="HwndSource_MainWindow" Key="{5DCB5A5E-68C9-4181-A326-447CEE76E5E5}">
+								<Image FileName="-1520881843" Left="0" Top="0" Right="800" Bottom="450" />
+								<Properties>
+									<Property Name="RootVisual.ClrClassName">
+										<Value Value="MainWindow" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value Value="CSV Regression" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="MainWindow" Key="{140AC069-8B31-416E-B93D-A4D73FF13C7C}">
+										<Image FileName="-1520881843" Left="8" Top="31" Right="809" Bottom="482" />
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value Value="CsvRegression.MainWindow" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="Menu" Key="{8F1A3F5C-F6FB-4C94-8CE6-6F226A00FD61}" ExtendedFind="True">
+												<Image FileName="-1097467129" Left="8" Top="31" Right="793" Bottom="49" />
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value Value="System.Windows.Controls.Menu" />
+													</Property>
+												</Properties>
+											</Child>
+											<Child Name="StatusBar" Key="{191FB45D-30F6-4EBE-9E83-60D243843FE2}" ExtendedFind="True">
+												<Image FileName="-1194489991" Left="8" Top="420" Right="793" Bottom="442" />
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value Value="System.Windows.Controls.Primitives.StatusBar" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="StatusbaritemReady" Key="{CA8AF863-17BE-465C-A834-4064195562C5}" ExtendedFind="True">
+														<Image FileName="-1194489991" Left="8" Top="420" Right="793" Bottom="442" />
+														<Properties>
+															<Property Name="ClrFullClassName">
+																<Value Value="System.Windows.Controls.Primitives.StatusBarItem" />
+															</Property>
+															<Property Name="WPFControlText">
+																<Value Value="Ready" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+						</Children>
+					</Child>
+				</Children>
+			</Child>
+		</Children>
+	</Nodes>
+	<LogicalNodes Name="Aliases" Owner="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
+		<Child Name="CsvRegression" Owner="{DB5B395E-D50A-4B77-BEFF-D677690255C7}">
+			<Child Name="HwndSource_MainWindow" Owner="{5DCB5A5E-68C9-4181-A326-447CEE76E5E5}">
+				<Child Name="MainWindow" Owner="{140AC069-8B31-416E-B93D-A4D73FF13C7C}">
+					<Child Name="Menu" Owner="{8F1A3F5C-F6FB-4C94-8CE6-6F226A00FD61}" />
+					<Child Name="StatusBar" Owner="{191FB45D-30F6-4EBE-9E83-60D243843FE2}">
+						<Child Name="StatusbaritemReady" Owner="{CA8AF863-17BE-465C-A834-4064195562C5}" />
+					</Child>
+				</Child>
+			</Child>
+		</Child>
+	</LogicalNodes>
+</Root>

@@ -6,3 +6,8 @@ obj/
 # planning/meta files — not part of the shipped project
 PLAN.md
 CLAUDE.md
+
+# TestComplete generated run artifacts — not source
+automation/TestComplete/**/Log/
+automation/TestComplete/**/Visualizer/
+automation/TestComplete/**/*.tcLogs

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root signature="{24B6FA0B-0143-461A-9758-AEB9E9A9428B}" version="15.0" key="{CB1966E7-947D-401B-9E99-70CBF292A8CD}">
+	<children>
+		<child name="CsvRegressionTests" key="{C61E095F-92BF-48E5-8BB2-B2C25C21998C}" path="CsvRegressionTests\CsvRegressionTests.mds" />
+	</children>
+	<testItems key="{A562865E-5524-4C1C-9162-E0C21476111A}">
+		<children>
+			<testItem key="{C61E095F-92BF-48E5-8BB2-B2C25C21998C}" enabled="True" timeout="0" stopOnError="True" description="" />
+		</children>
+	</testItems>
+	<variables key="{EB954AD5-1886-446B-9F5F-A7E508E95859}" />
+	<analysis key="{8C575530-B1A7-4232-BAC9-12DEAC382E02}" />
+	<scc key="{00000000-0000-0000-0000-000000000000}" name="">
+		<data />
+	</scc>
+</Root>
