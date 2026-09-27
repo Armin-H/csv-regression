@@ -1,0 +1,8 @@
+bin/
+obj/
+.vs/
+*.user
+
+# planning/meta files — not part of the shipped project
+PLAN.md
+CLAUDE.md
