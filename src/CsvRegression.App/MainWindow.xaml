@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CsvRegression"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="CSV Regression" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
+        <Menu Grid.Row="0">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Exit" Click="ExitMenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Edit"/>
+            <MenuItem Header="_Help"/>
+        </Menu>
+
+        <StatusBar Grid.Row="2">
+            <StatusBarItem>
+                <TextBlock x:Name="StatusText" Text="Ready"/>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>
