@@ -27,6 +27,10 @@ public partial class MainViewModel : ObservableObject
     [ObservableProperty]
     private string? _selectedYColumn;
 
+    [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(RemoveSelectedRowCommand))]
+    private DataRowView? _selectedRow;
+
     [RelayCommand]
     private void OpenCsv()
     {
@@ -40,6 +44,17 @@ public partial class MainViewModel : ObservableObject
         SelectedYColumn = null;
         StatusText = $"Loaded {table.Rows.Count} rows, {table.Headers.Count} columns from {Path.GetFileName(dialog.FileName)}";
     }
+
+    [RelayCommand(CanExecute = nameof(CanRemoveSelectedRow))]
+    private void RemoveSelectedRow()
+    {
+        var table = SelectedRow!.Row.Table;
+        SelectedRow.Row.Delete();
+        table.AcceptChanges();
+        StatusText = $"Removed row. {Rows!.Count} rows remaining.";
+    }
+
+    private bool CanRemoveSelectedRow() => SelectedRow != null;
 
     partial void OnSelectedXColumnChanged(string? value) => WarnIfSameColumn();
 
