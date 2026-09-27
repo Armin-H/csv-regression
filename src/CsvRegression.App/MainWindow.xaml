@@ -22,8 +22,22 @@
             <MenuItem Header="_Help"/>
         </Menu>
 
-        <DataGrid Grid.Row="1" ItemsSource="{Binding Rows}" AutoGenerateColumns="True"
-                  IsReadOnly="True" CanUserAddRows="False"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="8">
+                <TextBlock Text="X:" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                <ComboBox Width="120" ItemsSource="{Binding NumericColumns}" SelectedItem="{Binding SelectedXColumn}"/>
+                <TextBlock Text="Y:" VerticalAlignment="Center" Margin="12,0,4,0"/>
+                <ComboBox Width="120" ItemsSource="{Binding NumericColumns}" SelectedItem="{Binding SelectedYColumn}"/>
+            </StackPanel>
+
+            <DataGrid Grid.Row="1" ItemsSource="{Binding Rows}" AutoGenerateColumns="True"
+                      IsReadOnly="True" CanUserAddRows="False"/>
+        </Grid>
 
         <StatusBar Grid.Row="2">
             <StatusBarItem>

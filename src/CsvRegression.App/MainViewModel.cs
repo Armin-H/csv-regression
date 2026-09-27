@@ -1,5 +1,7 @@
+using System.Collections.ObjectModel;
 using System.Data;
 using System.IO;
+using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CsvRegression.Data;
@@ -16,6 +18,15 @@ public partial class MainViewModel : ObservableObject
     [ObservableProperty]
     private string _statusText = "Ready";
 
+    [ObservableProperty]
+    private ObservableCollection<string> _numericColumns = new();
+
+    [ObservableProperty]
+    private string? _selectedXColumn;
+
+    [ObservableProperty]
+    private string? _selectedYColumn;
+
     [RelayCommand]
     private void OpenCsv()
     {
@@ -24,7 +35,34 @@ public partial class MainViewModel : ObservableObject
 
         var table = CsvTableLoader.Load(dialog.FileName);
         Rows = ToDataView(table);
+        NumericColumns = new ObservableCollection<string>(FindNumericColumns(table));
+        SelectedXColumn = null;
+        SelectedYColumn = null;
         StatusText = $"Loaded {table.Rows.Count} rows, {table.Headers.Count} columns from {Path.GetFileName(dialog.FileName)}";
+    }
+
+    partial void OnSelectedXColumnChanged(string? value) => WarnIfSameColumn();
+
+    partial void OnSelectedYColumnChanged(string? value) => WarnIfSameColumn();
+
+    private void WarnIfSameColumn()
+    {
+        if (SelectedXColumn != null && SelectedXColumn == SelectedYColumn)
+        {
+            MessageBox.Show("X and Y must be different columns.", "Invalid selection",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+    }
+
+    private static List<string> FindNumericColumns(CsvTable table)
+    {
+        var result = new List<string>();
+        for (var i = 0; i < table.Headers.Count; i++)
+        {
+            if (NumericColumnDetector.IsNumeric(table, i))
+                result.Add(table.Headers[i]);
+        }
+        return result;
     }
 
     private static DataView ToDataView(CsvTable table)
