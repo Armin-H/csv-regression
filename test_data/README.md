@@ -1,4 +1,4 @@
-# Sample data
+# Test data
 
 Fixture CSVs for manual testing and TestComplete automation (which needs real files on disk, not generated ones).
 
