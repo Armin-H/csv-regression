@@ -38,6 +38,13 @@ public partial class MainViewModel : ObservableObject
         if (dialog.ShowDialog() != true) return;
 
         var table = CsvTableLoader.Load(dialog.FileName);
+        if (table.Headers.Count == 0)
+        {
+            MessageBox.Show("The selected file appears to be empty or not a valid CSV.", "Invalid file",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
+        }
+
         Rows = ToDataView(table);
         NumericColumns = new ObservableCollection<string>(FindNumericColumns(table));
         SelectedXColumn = null;
