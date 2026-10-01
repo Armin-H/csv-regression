@@ -1,12 +1,12 @@
 using CsvRegression.Data;
-using Xunit;
+using NUnit.Framework;
 
 namespace CsvRegression.Data.IntegrationTests;
 
 public class CsvTableLoaderTests
 {
-    [Fact]
-    [Trait("Category", "Smoke")]
+    [Test]
+    [Category("Smoke")]
     public void WellFormedCsv_LoadsHeadersAndRows()
     {
         var path = WriteTempCsv("x,y\n1,2\n3,4\n");
@@ -14,10 +14,10 @@ public class CsvTableLoaderTests
         {
             var table = CsvTableLoader.Load(path);
 
-            Assert.Equal(["x", "y"], table.Headers);
-            Assert.Equal(2, table.Rows.Count);
-            Assert.Equal(["1", "2"], table.Rows[0]);
-            Assert.Equal(["3", "4"], table.Rows[1]);
+            Assert.That(table.Headers, Is.EqualTo(new[] { "x", "y" }));
+            Assert.That(table.Rows.Count, Is.EqualTo(2));
+            Assert.That(table.Rows[0], Is.EqualTo(new[] { "1", "2" }));
+            Assert.That(table.Rows[1], Is.EqualTo(new[] { "3", "4" }));
         }
         finally
         {
@@ -25,8 +25,8 @@ public class CsvTableLoaderTests
         }
     }
 
-    [Fact]
-    [Trait("Category", "Regression")]
+    [Test]
+    [Category("Regression")]
     public void HeaderOnlyCsv_LoadsWithNoRows()
     {
         var path = WriteTempCsv("x,y\n");
@@ -34,8 +34,8 @@ public class CsvTableLoaderTests
         {
             var table = CsvTableLoader.Load(path);
 
-            Assert.Equal(["x", "y"], table.Headers);
-            Assert.Empty(table.Rows);
+            Assert.That(table.Headers, Is.EqualTo(new[] { "x", "y" }));
+            Assert.That(table.Rows, Is.Empty);
         }
         finally
         {
@@ -43,8 +43,8 @@ public class CsvTableLoaderTests
         }
     }
 
-    [Fact]
-    [Trait("Category", "Regression")]
+    [Test]
+    [Category("Regression")]
     public void EmptyFile_LoadsEmptyTable()
     {
         var path = WriteTempCsv("");
@@ -52,8 +52,8 @@ public class CsvTableLoaderTests
         {
             var table = CsvTableLoader.Load(path);
 
-            Assert.Empty(table.Headers);
-            Assert.Empty(table.Rows);
+            Assert.That(table.Headers, Is.Empty);
+            Assert.That(table.Rows, Is.Empty);
         }
         finally
         {
@@ -61,8 +61,8 @@ public class CsvTableLoaderTests
         }
     }
 
-    [Fact]
-    [Trait("Category", "Regression")]
+    [Test]
+    [Category("Regression")]
     public void RowMissingTrailingField_BecomesBlankCell()
     {
         var path = WriteTempCsv("x,y\n1\n");
@@ -70,7 +70,7 @@ public class CsvTableLoaderTests
         {
             var table = CsvTableLoader.Load(path);
 
-            Assert.Equal(["1", ""], table.Rows[0]);
+            Assert.That(table.Rows[0], Is.EqualTo(new[] { "1", "" }));
         }
         finally
         {
