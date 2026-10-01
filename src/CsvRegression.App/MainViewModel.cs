@@ -7,13 +7,20 @@ using CommunityToolkit.Mvvm.Input;
 using CsvRegression.Data;
 using CsvRegression.Domain;
 using Microsoft.Win32;
+using OxyPlot;
+using OxyPlot.Series;
 
 namespace CsvRegression;
 
 public partial class MainViewModel : ObservableObject
 {
+    private CsvTable? _loadedTable;
+
     [ObservableProperty]
     private DataView? _rows;
+
+    [ObservableProperty]
+    private PlotModel _plotModel = new();
 
     [ObservableProperty]
     private string _statusText = "Ready";
@@ -45,11 +52,13 @@ public partial class MainViewModel : ObservableObject
             return;
         }
 
+        _loadedTable = table;
         Rows = ToDataView(table);
         NumericColumns = new ObservableCollection<string>(FindNumericColumns(table));
         SelectedXColumn = null;
         SelectedYColumn = null;
         StatusText = $"Loaded {table.Rows.Count} rows, {table.Headers.Count} columns from {Path.GetFileName(dialog.FileName)}";
+        UpdateChart();
     }
 
     [RelayCommand(CanExecute = nameof(CanRemoveSelectedRow))]
@@ -59,13 +68,22 @@ public partial class MainViewModel : ObservableObject
         SelectedRow.Row.Delete();
         table.AcceptChanges();
         StatusText = $"Removed row. {Rows!.Count} rows remaining.";
+        UpdateChart();
     }
 
     private bool CanRemoveSelectedRow() => SelectedRow != null;
 
-    partial void OnSelectedXColumnChanged(string? value) => WarnIfSameColumn();
+    partial void OnSelectedXColumnChanged(string? value)
+    {
+        WarnIfSameColumn();
+        UpdateChart();
+    }
 
-    partial void OnSelectedYColumnChanged(string? value) => WarnIfSameColumn();
+    partial void OnSelectedYColumnChanged(string? value)
+    {
+        WarnIfSameColumn();
+        UpdateChart();
+    }
 
     private void WarnIfSameColumn()
     {
@@ -74,6 +92,22 @@ public partial class MainViewModel : ObservableObject
             MessageBox.Show("X and Y must be different columns.", "Invalid selection",
                 MessageBoxButton.OK, MessageBoxImage.Warning);
         }
+    }
+
+    private void UpdateChart()
+    {
+        var model = new PlotModel();
+
+        if (_loadedTable != null && SelectedXColumn != null && SelectedYColumn != null
+            && SelectedXColumn != SelectedYColumn)
+        {
+            var series = new ScatterSeries();
+            foreach (var (x, y) in PointExtractor.Extract(_loadedTable, SelectedXColumn, SelectedYColumn))
+                series.Points.Add(new ScatterPoint(x, y));
+            model.Series.Add(series);
+        }
+
+        PlotModel = model;
     }
 
     private static List<string> FindNumericColumns(CsvTable table)
