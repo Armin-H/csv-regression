@@ -2,5 +2,6 @@
 <Root signature="{9576DAFD-0ADD-41A8-9897-C72F150AF6BB}" version="15.0">
 	<children>
 		<child name="smoketest" key="{2A5E5358-EEFD-49E2-ACB3-E0CF63A620E3}" path="smoketest.tcKDTest" />
+		<child name="XYColumnSelectors_NoCsvLoaded_AreDisabled" key="{53C2AB4D-EC40-4176-82A7-9AB3BF57CF5F}" path="XYColumnSelectors_NoCsvLoaded_AreDisabled.tcKDTest" />
 	</children>
 </Root>

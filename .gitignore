@@ -13,3 +13,4 @@ automation/TestComplete/**/Log/
 automation/TestComplete/**/Visualizer/
 automation/TestComplete/**/*.tcLogs
 automation/TestComplete/**/*.tcCfgExtender
+automation/TestComplete/**/NameMapping/Images/*.png

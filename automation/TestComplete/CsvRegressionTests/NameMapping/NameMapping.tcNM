@@ -67,6 +67,30 @@
 													</Child>
 												</Children>
 											</Child>
+											<Child Name="ComboboxX" Key="{BEDF9647-950D-480E-B0C1-DEA751D2E183}" ExtendedFind="True">
+												<Image FileName="-1073087922" Left="29" Top="56" Right="150" Bottom="79" />
+												<TypeInfo Item0="{02999C3A-394E-4754-8554-71BD149F36DE}" />
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value Value="System.Windows.Controls.ComboBox" />
+													</Property>
+													<Property Name="WPFControlOrdinalNo">
+														<Value Value="1" Type="0" />
+													</Property>
+												</Properties>
+											</Child>
+											<Child Name="ComboboxY" Key="{32EEC30A-9877-40DC-B975-29C6F6D21F31}" ExtendedFind="True">
+												<Image FileName="-98732190" Left="174" Top="56" Right="295" Bottom="79" />
+												<TypeInfo Item0="{02999C3A-394E-4754-8554-71BD149F36DE}" />
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value Value="System.Windows.Controls.ComboBox" />
+													</Property>
+													<Property Name="WPFControlOrdinalNo">
+														<Value Value="2" Type="0" />
+													</Property>
+												</Properties>
+											</Child>
 										</Children>
 									</Child>
 								</Children>
@@ -85,6 +109,8 @@
 					<Child Name="StatusBar" Owner="{191FB45D-30F6-4EBE-9E83-60D243843FE2}">
 						<Child Name="StatusbaritemReady" Owner="{CA8AF863-17BE-465C-A834-4064195562C5}" />
 					</Child>
+					<Child Name="ComboboxX" Owner="{BEDF9647-950D-480E-B0C1-DEA751D2E183}" />
+					<Child Name="ComboboxY" Owner="{32EEC30A-9877-40DC-B975-29C6F6D21F31}" />
 				</Child>
 			</Child>
 		</Child>
