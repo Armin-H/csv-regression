@@ -26,7 +26,10 @@ public partial class MainViewModel : ObservableObject
     private string _statusText = "Ready";
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(HasNumericColumns))]
     private ObservableCollection<string> _numericColumns = new();
+
+    public bool HasNumericColumns => NumericColumns.Count > 0;
 
     [ObservableProperty]
     private string? _selectedXColumn;

@@ -4,4 +4,5 @@
   <Project Path="src/CsvRegression.Data/CsvRegression.Data.csproj" />
   <Project Path="tests/CsvRegression.Domain.UnitTests/CsvRegression.Domain.UnitTests.csproj" />
   <Project Path="tests/CsvRegression.Data.IntegrationTests/CsvRegression.Data.IntegrationTests.csproj" />
+  <Project Path="tests/CsvRegression.App.UnitTests/CsvRegression.App.UnitTests.csproj" />
 </Solution>
