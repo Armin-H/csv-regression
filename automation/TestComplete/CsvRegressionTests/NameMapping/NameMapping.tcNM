@@ -45,6 +45,20 @@
 														<Value Value="System.Windows.Controls.Menu" />
 													</Property>
 												</Properties>
+												<Children>
+													<Child Name="MenuitemFile" Key="{D6A6E989-8193-4D56-833B-9D9085F6D2B5}" ExtendedFind="True">
+														<Image FileName="-1009490961" Left="8" Top="31" Right="40" Bottom="49" />
+														<TypeInfo Item0="{023C5B68-68C0-4E98-B9C2-CBA33D49080E}" />
+														<Properties>
+															<Property Name="ClrFullClassName">
+																<Value Value="System.Windows.Controls.MenuItem" />
+															</Property>
+															<Property Name="WPFControlText">
+																<Value Value="_File" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
 											</Child>
 											<Child Name="StatusBar" Key="{191FB45D-30F6-4EBE-9E83-60D243843FE2}" ExtendedFind="True">
 												<Image FileName="-1194489991" Left="8" Top="420" Right="793" Bottom="442" />
@@ -95,6 +109,126 @@
 									</Child>
 								</Children>
 							</Child>
+							<Child Name="dlgOpen" Key="{590B337B-C428-4357-98A9-1F88EE242EAD}">
+								<Image FileName="939637773" Left="0" Top="0" Right="1200" Bottom="720" />
+								<Properties>
+									<Property Name="WndClass">
+										<Value Value="#32770" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value Value="Open" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="HwndSource_PopupRoot" Key="{854AC83C-789B-410D-B6A5-631156E4820C}">
+								<Image FileName="690660876" Left="0" Top="0" Right="125" Bottom="47" />
+								<TypeInfo Item0="{21B2CCD4-C43E-410E-A38E-B104A3050437}" />
+								<Properties>
+									<Property Name="RootVisual.ClrClassName">
+										<Value Value="PopupRoot" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value Value="" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="PopupRoot" Key="{BCD68D41-02FA-427D-A5E0-B7FFD917191A}">
+										<Image FileName="-136693010" Left="0" Top="0" Right="126" Bottom="47" />
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value Value="System.Windows.Controls.Primitives.PopupRoot" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="ComboboxitemX" Key="{96ADF939-DF7B-484F-B0DE-4E6F927EA251}" ExtendedFind="True">
+												<Image FileName="-136693010" Left="1" Top="1" Right="120" Bottom="21" />
+												<TypeInfo Item0="{023C5B68-68C0-4E98-B9C2-CBA33D49080E}" />
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value Value="System.Windows.Controls.ComboBoxItem" />
+													</Property>
+													<Property Name="WPFControlText">
+														<Value Value="x" />
+													</Property>
+												</Properties>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="explorer" Key="{488558CF-625E-4FA8-BE9E-450E83CD3F18}">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value Value="explorer" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="wndShell_TrayWnd" Key="{07AE3348-8B64-45BC-839A-50253690328F}">
+								<Properties>
+									<Property Name="WndClass">
+										<Value Value="Shell_TrayWnd" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="DesktopWindowXamlSource" Key="{B6A36BD6-40D7-45BD-A8F8-1F9D973978F6}">
+										<TypeInfo Item0="{6D5E43AA-CE0B-49DB-85EF-F269E4E8E23A}" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value Value="Windows.UI.Composition.DesktopWindowContentBridge" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value Value="DesktopWindowXamlSource" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="WindowsTerminal" Key="{1DD1EAAE-7768-4C12-9CA9-4E183F1FA127}">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value Value="WindowsTerminal" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="wndCASCADIA_HOSTING_WINDOW_CLASS" Key="{298CA3F9-62CD-4DFE-BB64-E26DAEB15366}">
+								<Image FileName="-686189145" Left="0" Top="0" Right="1249" Bottom="635" />
+								<Properties>
+									<Property Name="WndClass">
+										<Value Value="CASCADIA_HOSTING_WINDOW_CLASS" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value Value="✳ Test automation engineer application" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="DesktopWindowXamlSource" Key="{E31495DF-1422-4A77-A57E-89B2AE449C53}">
+										<Image FileName="-686189145" Left="8" Top="1" Right="1241" Bottom="627" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value Value="Windows.UI.Composition.DesktopWindowContentBridge" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value Value="DesktopWindowXamlSource" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="WindowsUIInputInputSiteWindowClass" Key="{4E08911D-FCD7-4C6B-A788-5C5A17F5E3A4}">
+												<Image FileName="-686189145" Left="8" Top="1" Right="8" Bottom="1" />
+												<TypeInfo Item0="{6D5E43AA-CE0B-49DB-85EF-F269E4E8E23A}" />
+												<Properties>
+													<Property Name="WndClass">
+														<Value Value="Windows.UI.Input.InputSite.WindowClass" />
+													</Property>
+												</Properties>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
 						</Children>
 					</Child>
 				</Children>
@@ -105,12 +239,32 @@
 		<Child Name="CsvRegression" Owner="{DB5B395E-D50A-4B77-BEFF-D677690255C7}">
 			<Child Name="HwndSource_MainWindow" Owner="{5DCB5A5E-68C9-4181-A326-447CEE76E5E5}">
 				<Child Name="MainWindow" Owner="{140AC069-8B31-416E-B93D-A4D73FF13C7C}">
-					<Child Name="Menu" Owner="{8F1A3F5C-F6FB-4C94-8CE6-6F226A00FD61}" />
+					<Child Name="Menu" Owner="{8F1A3F5C-F6FB-4C94-8CE6-6F226A00FD61}">
+						<Child Name="MenuitemFile" Owner="{D6A6E989-8193-4D56-833B-9D9085F6D2B5}" />
+					</Child>
 					<Child Name="StatusBar" Owner="{191FB45D-30F6-4EBE-9E83-60D243843FE2}">
 						<Child Name="StatusbaritemReady" Owner="{CA8AF863-17BE-465C-A834-4064195562C5}" />
 					</Child>
 					<Child Name="ComboboxX" Owner="{BEDF9647-950D-480E-B0C1-DEA751D2E183}" />
 					<Child Name="ComboboxY" Owner="{32EEC30A-9877-40DC-B975-29C6F6D21F31}" />
+				</Child>
+			</Child>
+			<Child Name="dlgOpen" Owner="{590B337B-C428-4357-98A9-1F88EE242EAD}" />
+			<Child Name="HwndSource_PopupRoot" Owner="{854AC83C-789B-410D-B6A5-631156E4820C}">
+				<Child Name="PopupRoot" Owner="{BCD68D41-02FA-427D-A5E0-B7FFD917191A}">
+					<Child Name="ComboboxitemX" Owner="{96ADF939-DF7B-484F-B0DE-4E6F927EA251}" />
+				</Child>
+			</Child>
+		</Child>
+		<Child Name="explorer" Owner="{488558CF-625E-4FA8-BE9E-450E83CD3F18}">
+			<Child Name="wndShell_TrayWnd" Owner="{07AE3348-8B64-45BC-839A-50253690328F}">
+				<Child Name="DesktopWindowXamlSource" Owner="{B6A36BD6-40D7-45BD-A8F8-1F9D973978F6}" />
+			</Child>
+		</Child>
+		<Child Name="WindowsTerminal" Owner="{1DD1EAAE-7768-4C12-9CA9-4E183F1FA127}">
+			<Child Name="wndCASCADIA_HOSTING_WINDOW_CLASS" Owner="{298CA3F9-62CD-4DFE-BB64-E26DAEB15366}">
+				<Child Name="DesktopWindowXamlSource" Owner="{E31495DF-1422-4A77-A57E-89B2AE449C53}">
+					<Child Name="WindowsUIInputInputSiteWindowClass" Owner="{4E08911D-FCD7-4C6B-A788-5C5A17F5E3A4}" />
 				</Child>
 			</Child>
 		</Child>
