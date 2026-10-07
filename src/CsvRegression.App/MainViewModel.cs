@@ -27,14 +27,22 @@ public partial class MainViewModel : ObservableObject
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(HasNumericColumns))]
+    [NotifyPropertyChangedFor(nameof(XSelectableColumns))]
+    [NotifyPropertyChangedFor(nameof(YSelectableColumns))]
     private ObservableCollection<string> _numericColumns = new();
 
     public bool HasNumericColumns => NumericColumns.Count > 0;
 
+    public IEnumerable<string> XSelectableColumns => NumericColumns.Where(c => c != SelectedYColumn);
+
+    public IEnumerable<string> YSelectableColumns => NumericColumns.Where(c => c != SelectedXColumn);
+
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(YSelectableColumns))]
     private string? _selectedXColumn;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(XSelectableColumns))]
     private string? _selectedYColumn;
 
     [ObservableProperty]
@@ -75,6 +83,13 @@ public partial class MainViewModel : ObservableObject
     }
 
     private bool CanRemoveSelectedRow() => SelectedRow != null;
+
+    [RelayCommand]
+    private void ClearSelection()
+    {
+        SelectedXColumn = null;
+        SelectedYColumn = null;
+    }
 
     partial void OnSelectedXColumnChanged(string? value)
     {

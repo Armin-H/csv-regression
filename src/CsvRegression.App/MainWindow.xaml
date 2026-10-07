@@ -40,11 +40,12 @@
 
             <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="8">
                 <TextBlock Text="X:" VerticalAlignment="Center" Margin="0,0,4,0"/>
-                <ComboBox Width="120" ItemsSource="{Binding NumericColumns}" SelectedItem="{Binding SelectedXColumn}"
+                <ComboBox Width="120" ItemsSource="{Binding XSelectableColumns}" SelectedItem="{Binding SelectedXColumn}"
                           IsEnabled="{Binding HasNumericColumns}"/>
                 <TextBlock Text="Y:" VerticalAlignment="Center" Margin="12,0,4,0"/>
-                <ComboBox Width="120" ItemsSource="{Binding NumericColumns}" SelectedItem="{Binding SelectedYColumn}"
+                <ComboBox Width="120" ItemsSource="{Binding YSelectableColumns}" SelectedItem="{Binding SelectedYColumn}"
                           IsEnabled="{Binding HasNumericColumns}"/>
+                <Button Content="Clear" Margin="12,0,0,0" Command="{Binding ClearSelectionCommand}"/>
             </StackPanel>
 
             <DataGrid Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Rows}" SelectedItem="{Binding SelectedRow}"
